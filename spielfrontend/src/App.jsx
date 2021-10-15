@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route } from 'react-router';
 import Login from './Components/Login';
+import jwtDecode from 'jwt-decode';
 
 
 class App extends Component {
@@ -24,9 +25,10 @@ class App extends Component {
   render() { 
     return(
      <div className = "App" >
-       <Switch>
+       <h1>Spiel</h1>
+       
          <Route path= "Login" component={Login}/>
-       </Switch>
+      
 
     </div>
     )
