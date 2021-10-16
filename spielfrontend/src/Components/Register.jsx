@@ -26,13 +26,15 @@ class Register extends Component {
     'username': this.state.userName,
     'password': this.state.password,
     'email': this.state.email,
+    'favorite_genre':this.state.favorite_genre,
+    'favorite_type':this.state.favorite_type,
    }
   // This is where a new user post to user table
      this.addNewUser(addUser)
   };
 
   async addNewUser(newUser){
-    await axios.post(``,newUser).then(response => {alert("You are registered.")})
+    await axios.post(`http://127.0.0.1:8000/api/auth/register/`,newUser).then(response => {alert("You are registered.")})
 
   }
   render() { 

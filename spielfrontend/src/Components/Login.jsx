@@ -20,10 +20,12 @@ const Login = () => {
       let log ={username : login, password:pass}
       let response = await axios.post(`http://127.0.0.1:8000/api/auth/login/`,log)
       console.log(response.data)
-      window.location = '/'
+      localStorage.setItem('token', response.data.access);
+      localStorage.setItem('refresh', response.data.refresh);
+      console.log(`refresh token`, response.data.refresh)
+      window.location = '/home'
       //resets form
-      setUserName('');
-      setPassword('');
+
       return localStorage;
     }
 
