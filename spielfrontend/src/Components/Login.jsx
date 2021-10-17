@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import{ Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Register from './Register';
 
 
 const Login = () => {
@@ -28,16 +29,19 @@ const Login = () => {
 
       return localStorage;
     }
+    
 
 
 return (
-
   <form onSubmit={handleSubmit}>
       <input type="text" name="username" placeholder="Username" value={username} onChange={(event) => setUserName(event.target.value)} />
       <input name="password" type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
       <input type="submit" value="Login" class="btn btn-primary" />
   </form>
 
+  
+  
+ 
       )
 }
 

@@ -33,7 +33,7 @@ const CreateComment =(props) => {
   return (
     <React.Fragment>
     <form onSubmit={handleSubmit} className="sumbitComment">
-    <label> Leave a Comment </label>  
+    <label> Leave </label>  
     <input className="input" name="comment" onChange={handleChange}placeholder="Comment"/>
     <button className ="createButton" type="submit">Create Comment</button>      
     </form>

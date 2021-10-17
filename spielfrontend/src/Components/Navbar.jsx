@@ -58,6 +58,9 @@ const NavBar = ({user}) => {
         <li class="nav-item">
         <Link to ='/storyform'><a class="nav-link">StorySubmission</a></Link>
         </li>
+        <li class="nav-item">
+        <Link to ='/story'><a class="nav-link">Story</a></Link>
+        </li>
         <li class = "nav-item"><Logout/></li>
         </React.Fragment>
         }
