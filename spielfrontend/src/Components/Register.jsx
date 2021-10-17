@@ -5,11 +5,14 @@ import React, { Component } from 'react';
 
 class Register extends Component {
     state ={
-      firstName:'',
+      firstname:'',
       lastName:'',
       userName:'',
       password:'',
       email:'',
+      favorite_genre:'',
+      favorite_type:'',
+      isemployee:false,
     }
   
   handleChange=(event) =>{
@@ -21,13 +24,14 @@ class Register extends Component {
   // this is where is should mirror the rows in the table
    handleSubmit=(event)=>{
     let addUser={
-    'firstName': this.state.firstName,
+    'firstname': this.state.firstname,
     'lastName': this.state.lastName,
     'username': this.state.userName,
     'password': this.state.password,
     'email': this.state.email,
-    'favorite_genre':this.state.favorite_genre,
-    'favorite_type':this.state.favorite_type,
+    'favoriteGenre':this.state.favoriteGenre,
+    'favoriteType':this.state.favoriteType,
+    'is_employee':this.state.isemployee
    }
   // This is where a new user post to user table
      this.addNewUser(addUser)
@@ -41,16 +45,23 @@ class Register extends Component {
     return( 
     <ul>
       <form className="form" onSubmit={this.handleSubmit} >
-        <li><label>firstName</label></li>
+        <li><label>Firstname</label></li>
         <input name="firstName" onChange={this.handleChange} value={this.state.firstName}/>
-        <li><label>firstName</label></li>
+        <li><label>LastName</label></li>
         <input name="lastName" onChange={this.handleChange} value={this.state.lastName}/>
-        <li><label>firstName</label></li>
+        <li><label>Username</label></li>
         <input name="userName" onChange={this.handleChange} value={this.state.userName}/>
         <li><label>Password</label></li>
         <input name="password" onChange={this.handleChange} value={this.state.password}/>
         <li><label>Email</label></li>
         <input name="email" onChange={this.handleChange} value={this.state.email}/>
+        <li><label>Favoritegenre</label></li>
+        <input name="favoriteGenre" onChange={this.handleChange} value={this.state.favoriteGenre}/>
+        <li><label>favoriteStoryType</label></li>
+        <input name="favoriteType" onChange={this.handleChange} value={this.state.favoriteType}/>
+
+
+
         <button type = "submit">Create account</button>
       
       </form>
