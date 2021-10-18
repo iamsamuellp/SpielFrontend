@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 import Login from './Components/Login';
 import jwtDecode from 'jwt-decode';
 import Register from './Components/Register';
@@ -9,7 +9,8 @@ import Home from './Components/Home';
 import {Redirect} from 'react-router';
 import NavBar from './Components/Navbar';
 import StoryForm from './Components/StoryForm';
-
+import Logout from './Components/Logout';
+ // Added this :boom:
 
 class App extends Component {
   state ={
@@ -49,6 +50,8 @@ class App extends Component {
          <Route path= "/login" component={Login}/>
          <Route path="/register" component={Register}/>
          <Route path="/storyform"component={StoryForm}/>
+         <Route path="/logout"component={Logout}/>
+         <Route path="/home" component={Home}/>
       </Switch>
 
     </div>

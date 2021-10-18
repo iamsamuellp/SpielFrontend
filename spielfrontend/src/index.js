@@ -6,6 +6,11 @@ import {BrowserRouter as Router,
     Route,
     Link
   } from "react-router-dom"
+import 'bootswatch/dist/sketchy/bootstrap.min.css';
+
+
+
+
 
 const jsxElement = <h1>Spiel Website</h1>
 

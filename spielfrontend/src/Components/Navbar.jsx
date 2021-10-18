@@ -37,7 +37,7 @@ const NavBar = ({user}) => {
       <span class="navbar-toggler-icon me-auto" padding-right="1 rem"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
+    <div class="collapse navbar-collapse" id="navbarColor">
       <ul class="navbar-nav ml-auto ">
       {!currentUser.user &&
           <React.Fragment>

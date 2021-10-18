@@ -36,16 +36,16 @@ class StoryForm extends Component {
     this.addNewStory(newStory)
   }
   async addNewProduct(anew){
-    await axios.post(`http://127.0.0.1:8000/api/story/new/`,anew).then(response => {alert("Story Submiited")})
+    await axios.post(`http://127.0.0.1:8000/api/story/new/`,anew).then(response => {alert("Story Submitted")})
   }
   
   render() { 
     return ( 
-      <div> 
+      <div class = "card w-75"> 
         <h1>Tell us a Tale</h1>
         <form className= "storyform" onSubmit={(event) => this.handleSubmit (event)}>
           <ul>
-        <li><label>Story</label></li>
+        <li><label>Title</label></li>
         <input name= "title" onChange={this.handleChange} value={this.state.title}/>
         <li><label>Author</label></li>
         <input name= "author" onChange={this.handleChange} value={this.state.author}/>
@@ -56,7 +56,7 @@ class StoryForm extends Component {
         <form action="/action_page.php">
         <div class="mb-3 mt-3">
       <label>Story:</label>
-      <textarea class="form-control" rows="5" id="comment" name="text" name= "story" onChange={this.handleChange} value={this.state.story}></textarea>
+      <textarea class="form-control container-xxl" rows="7" id="comment" name="text" name= "story" onChange={this.handleChange} value={this.state.story}></textarea>
     </div>
     <li><label>genre</label></li>
         <input name= "genre" onChange={this.handleChange} value={this.state.genre}/>

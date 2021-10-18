@@ -1,5 +1,9 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import {Route} from'react';
+import {Redirect} from "react-router"
+import {useState, useEffect} from 'react';
 
 
 
@@ -21,8 +25,9 @@ class Register extends Component {
     });
   };
   
-  // this is where is should mirror the rows in the table
+ 
    handleSubmit=(event)=>{
+     event.preventDefault()
     let addUser={
     'firstname': this.state.firstname,
     'lastName': this.state.lastName,
@@ -33,18 +38,26 @@ class Register extends Component {
     'favoriteType':this.state.favoriteType,
     'is_employee':this.state.isemployee
    }
-  // This is where a new user post to user table
+
      this.addNewUser(addUser)
   };
 
   async addNewUser(newUser){
-    await axios.post(`http://127.0.0.1:8000/api/auth/register/`,newUser).then(response => {alert("You are registered.")})
-
-  }
+    try{
+      let response = await axios.post("http://127.0.0.1:8000/api/auth/register/",newUser)
+      console.log(response);
+      window.location = '/login'
+      console.log(newUser)
+    }catch{
+      console.log("Error in Registration");
+    }
+  };
   render() { 
     return( 
+      <div class= "card w-75 ">
     <ul>
-      <form className="form" onSubmit={this.handleSubmit} >
+      
+      <form className="form" onSubmit={(event) =>this.handleSubmit (event)} >
         <li><label>Firstname</label></li>
         <input name="firstName" onChange={this.handleChange} value={this.state.firstName}/>
         <li><label>LastName</label></li>
@@ -65,7 +78,9 @@ class Register extends Component {
         <button type = "submit">Create account</button>
       
       </form>
+
     </ul>
+    </div>
     );
   }
 }
