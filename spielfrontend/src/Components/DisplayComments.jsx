@@ -1,7 +1,6 @@
 import React, {useEffect, useState, Component} from "react";
 import axios from "axios";
-import DisplayReplies from "../DisplayReplies/DisplayReplies";
-import './DisplayComment.css';
+import './Reply'
 import './icons/thumbsdown.png'
 
 

@@ -10,6 +10,7 @@ import {Redirect} from 'react-router';
 import NavBar from './Components/Navbar';
 import StoryForm from './Components/StoryForm';
 import Logout from './Components/Logout';
+import StoryTable from './Components/StoryTable';
  // Added this :boom:
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
          <Route path="/storyform"component={StoryForm}/>
          <Route path="/logout"component={Logout}/>
          <Route path="/home" component={Home}/>
+         <Route path="/storytable" component={StoryTable} />
       </Switch>
 
     </div>

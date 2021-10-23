@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 import { Route, Router } from 'react-router';
 import { Link } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 
 
 
@@ -33,6 +34,13 @@ class StoryTable extends Component {
     }
   }
 
+
+  async getStory(){
+    let response = await axios.get('')
+    this.setState({
+      user:response.data.id
+    })
+  }
   
    handleChange = (event) =>{
     this.setState({
@@ -80,6 +88,9 @@ filteredSearch = () =>{
             <td data-th ="Title"></td>
             <td data-th ="Genre"></td>
             <td data-th ="StoryType"></td>
+            <td></td>
+
+
 
             
             

@@ -8,7 +8,7 @@ function Story(props){
   const [story,setStory] = useState([''])
 
   return(
-    <div class="container">
+    <div class="card container-xxl ">
       <div class="row">
         <div class="col-md-offset-1 col-md-9"></div>
       {props.location.state.story.map((element) =>

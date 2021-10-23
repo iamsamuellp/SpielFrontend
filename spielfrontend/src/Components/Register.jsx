@@ -1,9 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import {Route} from'react';
-import {Redirect} from "react-router"
-import {useState, useEffect} from 'react';
+
 
 
 
@@ -16,20 +13,28 @@ class Register extends Component {
       email:'',
       favorite_genre:'',
       favorite_type:'',
-      isemployee:false,
+      is_employee:false,
     }
   
   handleChange=(event) =>{
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value, is_employee:true
     });
   };
   
+  
+  handleCheckbox = (event) => {
+    this.setState({
+      is_employee: !this.state.is_employee
+    },function(){
+      console.log(this.state.is_employee)
+    })
+  }
  
    handleSubmit=(event)=>{
      event.preventDefault()
     let addUser={
-    'firstname': this.state.firstname,
+    'firstname': this.state.firstName,
     'lastName': this.state.lastName,
     'username': this.state.userName,
     'password': this.state.password,
@@ -38,7 +43,7 @@ class Register extends Component {
     'favoriteType':this.state.favoriteType,
     'is_employee':this.state.isemployee
    }
-
+    console.log(addUser)
      this.addNewUser(addUser)
   };
 
@@ -46,7 +51,7 @@ class Register extends Component {
     try{
       let response = await axios.post("http://127.0.0.1:8000/api/auth/register/",newUser)
       console.log(response);
-      window.location = '/login'
+      // window.location = '/login'
       console.log(newUser)
     }catch{
       console.log("Error in Registration");
@@ -72,11 +77,9 @@ class Register extends Component {
         <input name="favoriteGenre" onChange={this.handleChange} value={this.state.favoriteGenre}/>
         <li><label>favoriteStoryType</label></li>
         <input name="favoriteType" onChange={this.handleChange} value={this.state.favoriteType}/>
-
-
-
         <button type = "submit">Create account</button>
-      
+
+        Already registered <a href="/Login">sign in?</a>
       </form>
 
     </ul>
