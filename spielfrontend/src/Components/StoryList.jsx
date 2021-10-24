@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import axios from "axios";
 import { Route, Router } from 'react-router';
 import { Link } from 'react-router-dom';
-import jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode'; 
+import Search from "react-searchbox-awesome"
 
 
 
-class StoryTable extends Component {
+class StoryList extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -106,4 +107,4 @@ filteredSearch = () =>{
   }
 }
  
-export default StoryTable;
+export default StoryList;

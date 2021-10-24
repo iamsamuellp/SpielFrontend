@@ -10,7 +10,7 @@ import {Redirect} from 'react-router';
 import NavBar from './Components/Navbar';
 import StoryForm from './Components/StoryForm';
 import Logout from './Components/Logout';
-import StoryTable from './Components/StoryTable';
+import StoryList from './Components/StoryList';
  // Added this :boom:
 
 class App extends Component {
@@ -24,11 +24,13 @@ class App extends Component {
     try{
         const user = jwtDecode(jwt);
         this.setState({user});
+        this.getCurrentUser(user)
     }catch{
 
     }
 }
 
+  
 
   render() { 
      const user = this.state.user;  
@@ -53,7 +55,7 @@ class App extends Component {
          <Route path="/storyform"component={StoryForm}/>
          <Route path="/logout"component={Logout}/>
          <Route path="/home" component={Home}/>
-         <Route path="/storytable" component={StoryTable} />
+         <Route path="/storylist" component={StoryList} />
       </Switch>
 
     </div>
